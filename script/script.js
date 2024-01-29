@@ -127,7 +127,7 @@ function moveTrashes() {
                     console.log("Game over");
                 };
     });
-}, 300);
+}, 30);
 };
 
 setInterval(() => {
