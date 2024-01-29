@@ -8,7 +8,6 @@ class Player {
         this.domElm = null;
 
         this.createDomElm();
-        document.addEventListener('keydown', this.handleKeyDown.bind(this));
     };
 
     createDomElm(){
@@ -24,25 +23,43 @@ class Player {
         boardElm.appendChild(this.domElm);
     }; 
 
+    moveUp(){
+        this.positionY-= 10;
+    };
+
+    moveDown (){
+        this.positionY+= 10;
+    }
+/*
     handleKeyDown(event) {
+        console.log('handleKeyDown called');
+        console.log('Event target:', event.target);
+        console.log('This context:', this);
         if (event.target !== this.domElm) return;
         if (event.key === 'ArrowUp') {
+            console.log('movetop function')
             this.moveTop();
         } else if (event.key === 'ArrowDown') {
+            console.log('movebottom function')
             this.moveBottom();
         }
+        
     };
 
     moveTop() {
         this.positionY -= 10;
         this.domElm.style.top = this.positionY + '%';
+        console.log('Moved top to:', this.positionY);
     };
 
     moveBottom() {
         this.positionY += 10;
         this.domElm.style.top = this.positionY + '%';
+        console.log('Moved bottom to:', this.positionY);
     };
+    */
 };
+
 
 // TRASHES CLASS
 class Trashes {
@@ -74,7 +91,14 @@ const player = new Player ();
 const trashes = [];
 
 // EVENTS
-document.addEventListener('keydown', player.handleKeyDown);
+document.addEventListener("keydown", (e) => {
+    if (e.code === 'ArrowUp') {
+        player.moveUp();
+    } else if (e.code === 'ArrowDown') {
+        player.moveDown();
+    }
+    player.domElm.style.top = player.positionY + '%';
+});
 
 /*
 // generate obstacles 
