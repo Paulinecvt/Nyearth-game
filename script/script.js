@@ -8,6 +8,7 @@ class Player {
         this.domElm = null;
 
         this.createDomElm();
+        document.addEventListener('keydown', this.handleKeyDown.bind(this));
     };
 
     createDomElm(){
@@ -22,6 +23,25 @@ class Player {
         const boardElm = document.getElementById("board");
         boardElm.appendChild(this.domElm);
     }; 
+
+    handleKeyDown(event) {
+        if (event.target !== this.domElm) return;
+        if (event.key === 'ArrowUp') {
+            this.moveTop();
+        } else if (event.key === 'ArrowDown') {
+            this.moveBottom();
+        }
+    };
+
+    moveTop() {
+        this.positionY -= 10;
+        this.domElm.style.top = this.positionY + '%';
+    };
+
+    moveBottom() {
+        this.positionY += 10;
+        this.domElm.style.top = this.positionY + '%';
+    };
 };
 
 // TRASHES CLASS
@@ -49,13 +69,15 @@ class Trashes {
     };
 };
 
-
 // CONST
 const player = new Player ();
 const trashes = [];
-const playerDiv = document.querySelector('.player');
+
+// EVENTS
+document.addEventListener('keydown', player.handleKeyDown);
+
 /*
-//generate obstacles 
+// generate obstacles 
 setInterval(() => {
     const newObstacle = new Trashes();
     trashes.push(newObstacle);
@@ -67,7 +89,7 @@ setInterval(() => {
 
         // 1. move current obstacle
         obstacleInstance.moveDown();
-        
+
         // 2. detect if there's a collision between the current obstacle and the player
         if (player.positionX < obstacleInstance.positionX + obstacleInstance.width &&
             player.positionX + player.width > obstacleInstance.positionX &&
@@ -78,29 +100,4 @@ setInterval(() => {
         }
 
     });
-}, 30);
-
-*/
-
-// EVENTS
-function direction () {
-    playerDiv.addEventListener('keydown', handleKeyDown);
-};
-
-function handleKeyDown(event) {
-    if (event.key === 'ArrowUp') {
-        this.moveTop();
-    } else if (event.key === 'ArrowDown') {
-        this.moveBottom();
-    }
-};
-
-function moveTop() {
-    if (event.key === 'ArrowUp'){
-     player.positionY += 5;  
-    };  
-};
-function moveBottom() {
-    if (event.key === 'ArrowDown')
-        player.positionY -= 5;
-};
+}, 30); */
