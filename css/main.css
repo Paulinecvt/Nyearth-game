@@ -1,15 +1,15 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url('/img/game-background.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-   background-position: center;
+    
 }
 
 
 #board {
-    
+    background-image: url('/img/game-background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     height: 100vh;
     position: relative;
     overflow: hidden;
@@ -19,6 +19,9 @@ body {
     background-image: url('/img/player.png');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
+    width: 20%;
+    height: 40%;
     position: absolute;
 }
 

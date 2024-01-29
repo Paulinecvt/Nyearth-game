@@ -20,6 +20,4 @@ class Trashes {
         const boardElm = document.getElementById("board");
         boardElm.appendChild(this.domElm);
     };
-
-
-}
+};
