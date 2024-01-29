@@ -26,6 +26,11 @@ body {
 }
 
 .obstacle {
-    background-color: rgb(90, 19, 156);
+    background-image: url('/img/trash1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 20%;
+    height: 40%;
     position: absolute;
 }
