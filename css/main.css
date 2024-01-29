@@ -20,17 +20,15 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    width: 20%;
-    height: 40%;
+    border: 2px solid black;
     position: absolute;
 }
 
-.obstacle {
+.trash {
     background-image: url('/img/trash1.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    width: 20%;
-    height: 40%;
+    border: 2px solid black;
     position: absolute;
 }

@@ -36,69 +36,105 @@ class Player {
 }; // end of player class
 
 
-//TRASHES CLASS
+
+
+// TRASHES CLASS
 class Trashes {
-    constructor () {
-        this.positionX = 100;
-        this.positionY = Math.floor(Math.random() * (100 - this.width + 1));;
-        this.width = 20;
+    constructor() {
+        this.width = 10;
         this.height = 20;
-        this.domElm = null;
+        this.positionX = 100;
+        this.positionY = Math.floor(Math.random() * (100 - this.width + 1));
+        // this.domElm = null;
 
         this.createDomElm();
+        
+    
     };
 
-    // create element of the trashes
-    createDomElm(){
+    // Create element of the trashes
+    createDomElm() {
         this.domElm = document.createElement("div");
         this.domElm.setAttribute("class", "trash");
         this.domElm.style.width = this.width + "%";
-        this.domElm.style.height = this.height + "%"
+        this.domElm.style.height = this.height + "%";
         this.domElm.style.left = this.positionX + "%";
         this.domElm.style.bottom = this.positionY + "%";
-        
+
         const boardElm = document.getElementById("board");
         boardElm.appendChild(this.domElm);
     };
 
-    // trashes move to left
-    moveLeft(){
+    // Move trashes to left
+    moveLeft() {
         this.positionX -= 10;
         this.domElm.style.left = this.positionX + "%";
-        if (this.positionX < 0) {
-            this.positionX = 0;
-        }
     };
 
-    //random position generate
-    createAndDisplayObstacles() {
-        this.positionY = Math.floor(Math.random() * (100 - this.width + 1));
-        obstacle.createDomElm();  
-        console.log('trash ' + this.positionY)
+    
+
+    // Remove trash
+    removeTrash() {
+        this.domElm.remove();
+        clearInterval(this.moveTrashesInterval);
     };
 
-    // generate obstacles every 3sec
-    setIntervalId = setInterval(() => {
-        this.createAndDisplayObstacles();
-    }, 3000);
-
-    //move trashes
-    moveTrashes() {
-        setInterval(() => {
-            this.positionX -= 10;
-            console.log('trash is moving to '+this.positionX)
-        }, 300)
-        
-    }
-}; // end of trash class
+    
+};
 
 
 
 // CONST
 const player = new Player ();
-const obstacle = new Trashes();
+// CONST
+let obstacles = [];
 
 
+
+
+// Create and display obstacles
+function createAndDisplayObstacles() {
+    const newObstacle = new Trashes();
+    obstacles.push(newObstacle);
+    console.log('Trash is created from the position ' + newObstacle.positionY);
+};
+
+// Move trashes and detect collision
+function moveTrashes() {
+    setInterval(() => {
+        obstacles.forEach((obstacleInstance) => {
+            obstacleInstance.moveLeft();
+
+            // Calculate the boundaries of the player and the obstacle
+            const obstacleLeft = obstacleInstance.positionX;
+            const obstacleRight = obstacleInstance.positionX + obstacleInstance.width;
+            const obstacleTop = obstacleInstance.positionY;
+            const obstacleBottom = obstacleInstance.positionY + obstacleInstance.height;
+
+            const playerLeft = player.positionX;
+            const playerRight = player.positionX + player.width;
+            const playerTop = player.positionY;
+            const playerBottom = player.positionY + player.height;
+
+            // Check for collision between player and obstacle
+            if (
+                playerTop < obstacleBottom &&
+                playerBottom > obstacleTop &&
+                playerLeft < obstacleRight &&
+                playerRight > obstacleLeft
+            ) {
+                    // Collision detected, trigger game over
+                    console.log("Game over");
+                };
+    });
+}, 300);
+};
+
+setInterval(() => {
+    createAndDisplayObstacles();
+}, 3000);
+
+moveTrashes();
 
 
 // EVENTS
