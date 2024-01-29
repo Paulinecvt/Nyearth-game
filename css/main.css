@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('/img/game-background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+   background-position: center;
+}
+
+
+#board {
+    
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.player {
+    background-image: url('/img/player.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+}
+
+.obstacle {
+    background-color: rgb(90, 19, 156);
+    position: absolute;
+}
