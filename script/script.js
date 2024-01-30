@@ -154,6 +154,8 @@ function moveTrashes() {
                 playerBottom > obstacleTop
             ) {  // Collision detected, trigger game over
                     console.log("Game over");
+                    location.href = "gameover.html"
+
                 };   
         });
     }, 200);

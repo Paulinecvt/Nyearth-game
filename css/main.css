@@ -26,8 +26,7 @@ body {
 }
 
 .trash {
-    
-    
+
     border: 2px solid black;
     position: absolute;
  
@@ -50,7 +49,6 @@ body {
     content: attr(data-label);
     display: flex;
     align-items : center;
-    
     position: absolute;
     left: 5px;
     right: 8px;
@@ -63,3 +61,45 @@ body {
     border-radius: 20px;
     padding: 10px;
 }
+
+#page-gameover {
+    background-image: url('/img/game-background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex; /* Make the container a flex container */
+    flex-direction: column; /* Stack child elements vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    position: relative;
+    overflow: hidden;
+}
+
+#restart-button {
+    height: 40vh;
+    width: 20vw;
+}
+
+#fail, #try-again, #gameover-title {
+    color: grey;
+    text-align: center; /* Center the text */
+}
+
+#gameover-title {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 60px;
+}
+
+#fail {
+    font-family: 'Gill Sans', sans-serif;
+    font-size: 40px;
+    margin-bottom: 0;
+}
+
+#try-again {
+    font-family: 'Gill Sans', sans-serif;
+    font-size: 32px;
+    margin-top: 0;
+}
+
