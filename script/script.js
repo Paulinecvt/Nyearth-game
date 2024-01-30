@@ -175,6 +175,11 @@ setInterval(() => {
 
 moveTrashes();
 
+setTimeout(()=> {
+    console.log("Victory");
+    location.href = "victory.html"
+}, 54000);
+
 
 
 // EVENTS
@@ -199,6 +204,8 @@ moveTrashes();
 // position X > width > vw
 // position Y > height > vh
 
+
+//Progress Bar
 const progressBar = document.getElementsByClassName('progressbar')[0];
 setInterval(() => {
     const computedStyle = getComputedStyle(progressBar);
