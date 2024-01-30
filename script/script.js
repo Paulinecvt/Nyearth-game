@@ -1,7 +1,7 @@
 // PLAYER CLASS
 class Player {
     constructor (){
-        this.positionX = 150;
+        this.positionX = 160;
         this.positionY = 300;
         this.width = 300;
         this.height = 150;
@@ -46,6 +46,7 @@ class Trashes {
         this.width = 120;
         this.height = 120;
         this.positionX = 100;
+        // this.positionX = window.innerWidth - this.width;
         this.positionY = Math.floor(Math.random() * (window.innerHeight - this.height));
         // this.domElm = null;
 
@@ -70,10 +71,16 @@ class Trashes {
     // Move trashes to left
     moveLeft() {
         this.positionX -= 10;
-        this.domElm.style.left = this.positionX + "%";
-        return this.positionX;
-    }; 
-};
+        this.domElm.style.left = this.positionX + "%"
+        // console.log(this.positionX);
+      };
+
+      // Function to remove obstacles that are marked for removal
+     removeObstacles() {
+        obstacles = obstacles.filter(obstacle => obstacle.positionX + obstacle.width > 0);
+     };
+ };
+       
 
 
 
@@ -87,19 +94,10 @@ let obstacles = [];
 
 // Create and display obstacles
 function createAndDisplayObstacles() {
-
-    // Remove previous obstacles from the DOM
-    obstacles.forEach((obstacle) => {
-        obstacle.domElm.remove();
-    });
-
-    // Clear the obstacles array
-    obstacles = [];
-
-    //create new
     const newObstacle = new Trashes();
     obstacles.push(newObstacle);
     console.log('Trash is created from the position ' + newObstacle.positionY);
+    //newObstacle.createDomElm();
     return newObstacle.positionY;
 };
 
@@ -110,9 +108,13 @@ function moveTrashes() {
      setInterval(() => {
         obstacles.forEach((obstacleInstance) => {
             obstacleInstance.moveLeft();
-        
+            
         });
-    }, 150);
+    }, 200);
+        obstacles.forEach((obstacleInstance) => {
+            obstacleInstance.removeObstacles();
+        })
+
 };
 
     setInterval(() => {
@@ -132,16 +134,17 @@ function moveTrashes() {
             // Check for collision between player and obstacle
             if (
                 playerLeft < obstacleRight &&
-                playerRight > obstacleLeft &&
+                playerRight >= obstacleLeft &&
                 playerTop < obstacleBottom &&
                 playerBottom > obstacleTop
             ) {
                     // Collision detected, trigger game over
                     console.log("Game over");
-                } 
+                    
+                }; 
                
     });
-}, 150);
+}, 200);
 
 
 
@@ -167,3 +170,7 @@ moveTrashes();
     player.domElm.style.top = player.positionY + 'px';
     
 });
+
+
+// toujours pas de collision == tailles ?? 
+
