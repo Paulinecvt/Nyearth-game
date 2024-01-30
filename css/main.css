@@ -1,3 +1,19 @@
+@font-face {
+    src: url('/fonts/Silkscreen-Regular.ttf');
+    font-family: silk;
+}
+
+@font-face {
+    src: url('/fonts/Silkscreen-Bold.ttf');
+    font-family: silkbold;
+}
+
+@font-face {
+    src: url('/fonts/NanumPenScript-Regular.ttf');
+    font-family: nanum;
+}
+
+
 body {
     margin: 0;
     padding: 0;
@@ -73,45 +89,95 @@ body {
     overflow: hidden;
 }
 
+#page-victory {
+    background-image: url('/img/game-background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex; /* Make the container a flex container */
+    flex-direction: column; /* Stack child elements vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    position: relative;
+    overflow: hidden;
+}
+
 #restart-button {
-    height: 40vh;
-    width: 20vw;
+    height: 18vh;
+    width: 10vw;
 }
 
-#fail, #try-again, #gameover-title {
-    color: grey;
-    text-align: center; /* Center the text */
+#fail, #try-again {
+    text-align: center; 
 }
 
-#gameover-title {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 60px;
+#gameover-img {
+    height: 38vh;
+    width: 15vw;
 }
 
 #fail {
-    font-family: 'Gill Sans', sans-serif;
+    font-family: nanum;
+    color: #74cbfc;
+    font-size: 40px;
+    margin-bottom: 0;
+    
+}
+
+#try-again {
+    font-family: nanum;
+    color: #74cbfc;
+    font-size: 32px;
+    margin-top: 0;
+    
+}
+
+
+#btn {
+    display: flex; 
+    flex-direction: row;
+    justify-content: center; 
+}
+#V-donate-btn {
+    height: 18vh;
+    width: 10vw;
+}
+
+#V-restart-button {
+    height: 18vh;
+    width: 10vw;
+}
+
+#victory-title {
+    font-family: silkbold;
+    font-size:100px;
+    background-image: 
+      linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet, red); 
+        -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;  
+    animation: rainbow-animation 35s linear infinite;
+  }
+  
+  @keyframes rainbow-animation {
+      to {
+          background-position: 4500vh;
+      }
+  }
+
+
+#win {
+    font-family: nanum;
+    
+    color: #74cbfc;
     font-size: 40px;
     margin-bottom: 0;
 }
 
-#try-again {
-    font-family: 'Gill Sans', sans-serif;
+#subHead {
+    font-family: nanum;
+    
+    color: #74cbfc;
     font-size: 32px;
     margin-top: 0;
 }
-
-#btn {
-    display: flex; /* Make the container a flex container */
-    flex-direction: row;
-    justify-content: center; /* Center items vertically */
-}
-#V-donate-btn {
-    height: 40vh;
-    width: 20vw;
-}
-
-#V-restart-button {
-    height: 40vh;
-    width: 20vw;
-}
-
