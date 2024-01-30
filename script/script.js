@@ -1,11 +1,11 @@
 // PLAYER CLASS
 class Player {
     constructor (){
-        this.positionX = 150;
-        this.positionY = 300;
-        this.width = 300;
-        this.height = 150;
-        this.domElm = null;
+        this.positionX = 0;
+        this.positionY = 40;
+        this.width = 23;
+        this.height = 23;
+       // this.domElm = null;
 
         this.createDomElm();
     };
@@ -14,11 +14,11 @@ class Player {
     createDomElm(){
         this.domElm = document.createElement("div");
         this.domElm.setAttribute("class", "player");
-        this.domElm.style.height = this.height + "px";
-        this.domElm.style.width = this.width + "px";
-        this.domElm.style.top = this.positionY+ "px";
-        this.domElm.style.left = this.positionX + "px";
-        this.domElm.style.transform = "translate(-50%, -50%)";
+        this.domElm.style.height = this.height + "vh";
+        this.domElm.style.width = this.width + "vw";
+        this.domElm.style.top = this.positionY+ "vh";
+        this.domElm.style.left = this.positionX + "vw";
+       // this.domElm.style.transform = "translate(-50%, -50%)";
     
         const boardElm = document.getElementById("board");
         boardElm.appendChild(this.domElm);
@@ -164,14 +164,6 @@ function moveTrashes() {
 
 };
 
-    setInterval(() => {
-
-            obstacles.forEach((obstacleInstance) => {
-              
-              
-    });
-
-}, 100);
 
 
 
