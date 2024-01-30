@@ -15,6 +15,7 @@ body {
     overflow: hidden;
 }
 
+
 .player {
     background-image: url('/img/player.png');
     background-repeat: no-repeat;
@@ -22,13 +23,15 @@ body {
     background-position: center;
     border: 2px solid black;
     position: absolute;
+    width : 300px;
+    height : 150px;
 }
 
 .trash {
-    background-image: url('/img/trash1.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    
+    
     border: 2px solid black;
     position: absolute;
+    width : 120px;
+    height : 120px;
 }
