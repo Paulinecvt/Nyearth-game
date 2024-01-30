@@ -194,7 +194,12 @@ moveTrashes();
 });
 
 
-// toujours pas de collision
-
 // position X > width > vw
 // position Y > height > vh
+
+const progressBar = document.getElementsByClassName('progressbar')[0];
+setInterval(() => {
+    const computedStyle = getComputedStyle(progressBar);
+    const width = parseFloat(computedStyle.getPropertyValue('--width')) 
+    progressBar.style.setProperty('--width', width +.01);
+}, 5)

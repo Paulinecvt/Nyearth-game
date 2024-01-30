@@ -32,3 +32,34 @@ body {
     position: absolute;
  
 }
+
+*, *::before, *::after {
+    box-sizing : border-box;
+}
+
+.progressbar {
+    position: relative;
+    width: 400px;
+    height: 50px;
+    background-color: black;
+    border-radius: 30px;
+    color: white;
+}
+
+.progressbar::before{
+    content: attr(data-label);
+    display: flex;
+    align-items : center;
+    
+    position: absolute;
+    left: 5px;
+    right: 8px;
+    top: 8px;
+    bottom: 8px;
+    width: calc(var(--width, 0) * 1%);
+    min-width: 5px;
+    max-width: calc(100% - 10px);
+    background-color: blue;
+    border-radius: 20px;
+    padding: 10px;
+}
