@@ -3,9 +3,8 @@ class Player {
     constructor (){
         this.positionX = 0;
         this.positionY = 40;
-        this.width = 23;
+        this.width = 25;
         this.height = 23;
-       // this.domElm = null;
 
         this.createDomElm();
     };
@@ -18,7 +17,7 @@ class Player {
         this.domElm.style.width = this.width + "vw";
         this.domElm.style.top = this.positionY+ "vh";
         this.domElm.style.left = this.positionX + "vw";
-       // this.domElm.style.transform = "translate(-50%, -50%)";
+       
     
         const boardElm = document.getElementById("board");
         boardElm.appendChild(this.domElm);
@@ -26,23 +25,23 @@ class Player {
 
     //movements
     moveUp(){
-        this.positionY-= 30;
-        return this.positionY;
+        this.positionY-= 15;
+        this.domElm.style.top = this.positionY + "vh"
     };
 
     moveDown (){
-        this.positionY+= 30;
-        return this.positionY;
+        this.positionY+= 15;
+        this.domElm.style.top = this.positionY + "vh"
     };
 
     moveRight(){
-        this.positionX += 30;
-        return this.positionX;
+        this.positionX += 15;
+        this.domElm.style.left = this.positionX + "vw"
     };
 
     moveLeft (){
-        this.positionX -= 30;
-        return this.positionX;
+        this.positionX -= 15;
+        this.domElm.style.left = this.positionX + "vw"
     }
 
 }; // end of player class
@@ -68,11 +67,12 @@ const obstacleImages = [
 // TRASHES CLASS
 class Trashes {
     constructor() {
-        this.width = 120;
-        this.height = 120;
-        this.positionX = 1400;
-        // this.positionX = window.innerWidth - this.width;
-        this.positionY = Math.floor(Math.random() * (window.innerHeight - this.height));
+        this.width = 10;
+        this.height = 17;
+       // this.positionX = 140;
+        this.positionX = 100;
+       // this.positionY = Math.floor(Math.random() * (window.innerHeight - this.height));
+       this.positionY = Math.floor(Math.random()* (100 - this.width + 1));
         this.imageSrc = chooseRandomImage();
 
         this.createDomElm();
@@ -83,10 +83,10 @@ class Trashes {
         this.domElm = document.createElement("img");
         this.domElm.src = this.imageSrc;
         this.domElm.setAttribute("class", "trash");
-        this.domElm.style.width = this.width + "px";
-        this.domElm.style.height = this.height + "px";
-        this.domElm.style.top = this.positionY+ "px";
-        this.domElm.style.left = this.positionX + "px";
+        this.domElm.style.height = this.height + "vh";
+        this.domElm.style.width = this.width + "vw";
+        this.domElm.style.top = this.positionY+ "vh";
+        this.domElm.style.left = this.positionX + "vw";
         
 
         const boardElm = document.getElementById("board");
@@ -95,8 +95,8 @@ class Trashes {
 
     // Move trashes to left
     moveLeft() {
-        this.positionX -= 40;
-        this.domElm.style.left = this.positionX + "px"
+        this.positionX -= 8;
+        this.domElm.style.left = this.positionX + "vw"
         return this.positionX;
       };
 
@@ -191,15 +191,10 @@ moveTrashes();
 
     }
 
-
-
-    player.domElm.style.top = player.positionY + 'px';
-    player.domElm.style.bottom = player.positionY + 'px';
-    player.domElm.style.left = player.positionX + 'px';
-    player.domElm.style.right = player.positionX + 'px';
-    
 });
 
 
 // toujours pas de collision
 
+// position X > width > vw
+// position Y > height > vh
