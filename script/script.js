@@ -105,7 +105,7 @@ class Trashes {
 
     // Move trashes to left
     moveLeft() {
-        this.positionX -= 8;
+        this.positionX -= 2;
         this.domElm.style.left = this.positionX + "vw"
         return this.positionX;
       };
@@ -127,7 +127,7 @@ let obstacles = [];
 
 
 
-let obstacleSpeed = 200; // starting speed
+let obstacleSpeed = 0; // starting speed
 
 function createAndDisplayObstacles() {
     const newObstacle = new Trashes();
@@ -140,6 +140,7 @@ function createAndDisplayObstacles() {
 function moveTrashes(obstacleSpeed) {
     obstacles.forEach((obstacleInstance) => {
         obstacleInstance.moveLeft(obstacleSpeed);
+        obstacleInstance.domElm.style.left = obstacleInstance.positionX + "vw";
 
         // Calculate the boundaries
         const obstacleLeft = obstacleInstance.positionX;
@@ -172,87 +173,43 @@ function moveTrashes(obstacleSpeed) {
 };
 
 function moveTrashesLevel1() {
-    obstacleSpeed = 190;
+    obstacleSpeed = 100;
     setInterval(() => {
-        moveTrashes(obstacleSpeed)
+        moveTrashes(obstacleSpeed);
     }, obstacleSpeed);
 };
 
 function moveTrashesLevel2() {
-    obstacleSpeed = 170;
     setTimeout(() => {
-    setInterval(() => {
-        moveTrashes(obstacleSpeed)
-    }, obstacleSpeed);
-}, 15000);
+        console.log('level2');
+        obstacleSpeed = 80;
+        setInterval(() => {
+            moveTrashes(obstacleSpeed);
+        }, obstacleSpeed);
+    }, 10000);
 };
 
 function moveTrashesLevel3() {
-    obstacleSpeed = 150;
     setTimeout(() => {
+        console.log('level3');
+        obstacleSpeed = 60;
         setInterval(() => {
-            moveTrashes(obstacleSpeed)
+            moveTrashes(obstacleSpeed);
         }, obstacleSpeed);
     }, 20000);
 };
 
 function gameplay() {
-        console.log('level1');
-        moveTrashesLevel1();
-setTimeout(() => {
-    console.log('level2');
-    moveTrashesLevel2();
-}, 15000)
-setTimeout(() => {
-    console.log('level3');
-    moveTrashesLevel3();
-}, 30000)
+    console.log('level1');
+    moveTrashesLevel1();
+    setTimeout(() => {
+        moveTrashesLevel2();
+    }, 10000); // hard level : modify to 10000
+    setTimeout(() => {
+        moveTrashesLevel3();
+    }, 20000); // hard level : modify to 18000 and add a level 4
 };
   
-
-/*
-// Move trashes and detect collision
-function moveTrashes() {
-    
-     setInterval(() => {
-        obstacles.forEach((obstacleInstance) => {
-            obstacleInstance.moveLeft();
-
-            // Calculate the boundaries
-            const obstacleLeft = obstacleInstance.positionX;
-            const obstacleRight = obstacleInstance.positionX + obstacleInstance.width;
-            const obstacleTop = obstacleInstance.positionY;
-            const obstacleBottom = obstacleInstance.positionY + obstacleInstance.height;
-
-            const playerLeft = player.positionX;
-            const playerRight = player.positionX + player.width;
-            const playerTop = player.positionY;
-            const playerBottom = player.positionY + player.height;
-
-            // Check for collision between player and obstacle
-            
-            if (
-                playerLeft < obstacleRight &&
-                playerRight > obstacleLeft &&
-                playerTop < obstacleBottom &&
-                playerBottom > obstacleTop
-            ) {  // Collision detected, trigger game over
-                    console.log("Game over");
-                    location.href = "gameover.html"
-
-                };   
-        });
-    }, 200);
-
-        obstacles.forEach((obstacleInstance) => {
-            obstacleInstance.removeObstacles();
-        })
-
-};
-*/
-
-
-
 
 setInterval(() => {
     createAndDisplayObstacles();
@@ -260,12 +217,6 @@ setInterval(() => {
 
 gameplay();
   
-
-
-
-
-
-
 setTimeout(()=> {
     console.log("Victory");
     location.href = "victory.html"
