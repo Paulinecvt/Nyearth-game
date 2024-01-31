@@ -79,10 +79,9 @@ class Trashes {
     constructor() {
         this.width = 10;
         this.height = 17;
-       // this.positionX = 140;
         this.positionX = 100;
        // this.positionY = Math.floor(Math.random() * (window.innerHeight - this.height));
-       this.positionY = Math.floor(Math.random()* (100 - this.width + 1));
+        this.positionY = Math.floor(Math.random()* (100 - this.height + 1));
         this.imageSrc = chooseRandomImage();
 
         this.createDomElm();
