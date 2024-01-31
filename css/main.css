@@ -20,6 +20,60 @@ body {
     
 }
 
+#welcome-body {
+    background-image: url('../img/game-background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* Stack child elements vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+}
+
+#welcome-page {
+    font-family: nanum;
+    color: #74cbfc;
+    font-size: 40px;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-align: center;
+}
+
+#speech {
+    margin-top: 0vh;
+    padding-top: 0vh;
+    text-align: center;
+}
+
+#title1 {
+    font-family: silk;
+    font-size: 13vh;
+    margin-bottom:0vh;
+    color:#1c83cb;
+    padding-bottom: 0vh;
+}
+
+#title2 {
+    @supports (background-clip: text) or (-webkit-background-clip: text) {
+    background-image: url("../img/rainbow.png");
+    background-size: 38% auto;
+    background-position: top;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-family: silkbold;
+    font-size: 18vh;
+    padding-top: 0vh;
+    margin-top:0vh;
+    padding-bottom: 0vh;
+    margin-bottom: 0vh;
+    }
+}
+
 
 #board {
     background-image: url('../img/game-background.png');
@@ -29,6 +83,9 @@ body {
     height: 100vh;
     position: relative;
     overflow: hidden;
+    display: flex;
+    justify-content: center; 
+     
 }
 
 
@@ -42,7 +99,7 @@ body {
 
 .trash {
     position: absolute;
- 
+    transition: left 0.2s ease;
 }
 
 *, *::before, *::after {
@@ -56,6 +113,7 @@ body {
     background-color: black;
     border-radius: 30px;
     color: white;
+    justify-content: center; 
 }
 
 .progressbar::before{
@@ -153,9 +211,9 @@ body {
     font-family: silkbold;
     font-size:100px;
     background-image: 
-      linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet, red); 
-        -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;  
+    linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet, red); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;  
     animation: rainbow-animation 35s linear infinite;
   }
   

@@ -26,7 +26,7 @@ class Player {
     //movements
     moveUp(){
         if (this.positionY > 0) { 
-            this.positionY -= 15;
+            this.positionY -= 10;
             this.domElm.style.top = this.positionY + "vh";
         };
     };
@@ -34,7 +34,7 @@ class Player {
     moveDown (){
         const screenHeight = 100;
         if (this.positionY + this.height < screenHeight) { 
-            this.positionY += 15;
+            this.positionY += 10;
             this.domElm.style.top = this.positionY + "vh";
         };
     };
@@ -42,14 +42,14 @@ class Player {
     moveRight(){
         const screenWidth = 100; 
         if (this.positionX + this.width + 10 < screenWidth) { 
-            this.positionX += 15;
+            this.positionX += 10;
             this.domElm.style.left = this.positionX + "vw";
         };
     };
 
     moveLeft (){
         if (this.positionX > 0) {
-            this.positionX -= 15;
+            this.positionX -= 10;
             this.domElm.style.left = this.positionX + "vw";
         };
     };
@@ -81,8 +81,8 @@ class Trashes {
         this.height = 17;
        // this.positionX = 140;
         this.positionX = 100;
-       // this.positionY = Math.floor(Math.random() * (window.innerHeight - this.height));
-       this.positionY = Math.floor(Math.random()* (100 - this.width + 1));
+        //this.positionY = Math.floor(Math.random() * (window.innerHeight - this.height));
+        this.positionY = Math.floor(Math.random()* (100 - this.width + 3));
         this.imageSrc = chooseRandomImage();
 
         this.createDomElm();
@@ -173,7 +173,7 @@ function moveTrashes(obstacleSpeed) {
 };
 
 function moveTrashesLevel1() {
-    obstacleSpeed = 100;
+    obstacleSpeed = 70;
     setInterval(() => {
         moveTrashes(obstacleSpeed);
     }, obstacleSpeed);
@@ -182,7 +182,7 @@ function moveTrashesLevel1() {
 function moveTrashesLevel2() {
     setTimeout(() => {
         console.log('level2');
-        obstacleSpeed = 80;
+        obstacleSpeed = 55;
         setInterval(() => {
             moveTrashes(obstacleSpeed);
         }, obstacleSpeed);
@@ -192,7 +192,7 @@ function moveTrashesLevel2() {
 function moveTrashesLevel3() {
     setTimeout(() => {
         console.log('level3');
-        obstacleSpeed = 60;
+        obstacleSpeed = 47;
         setInterval(() => {
             moveTrashes(obstacleSpeed);
         }, obstacleSpeed);
@@ -201,19 +201,19 @@ function moveTrashesLevel3() {
 
 function gameplay() {
     console.log('level1');
-    moveTrashesLevel1();
+    moveTrashesLevel1(); // = level2 of easymode
     setTimeout(() => {
         moveTrashesLevel2();
-    }, 10000); 
+    }, 10000); // = level3 of easymode
     setTimeout(() => {
         moveTrashesLevel3();
-    }, 20000); 
+    }, 20000); // hard level
 };
   
 
 setInterval(() => {
     createAndDisplayObstacles();
-}, 2300);
+}, 1800);
 
 gameplay();
   
