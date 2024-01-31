@@ -25,24 +25,34 @@ class Player {
 
     //movements
     moveUp(){
-        this.positionY-= 15;
-        this.domElm.style.top = this.positionY + "vh"
+        if (this.positionY > 0) { 
+            this.positionY -= 15;
+            this.domElm.style.top = this.positionY + "vh";
+        };
     };
 
     moveDown (){
-        this.positionY+= 15;
-        this.domElm.style.top = this.positionY + "vh"
+        const screenHeight = 100;
+        if (this.positionY + this.height < screenHeight) { 
+            this.positionY += 15;
+            this.domElm.style.top = this.positionY + "vh";
+        };
     };
 
     moveRight(){
-        this.positionX += 15;
-        this.domElm.style.left = this.positionX + "vw"
+        const screenWidth = 100; 
+        if (this.positionX + this.width + 10 < screenWidth) { 
+            this.positionX += 15;
+            this.domElm.style.left = this.positionX + "vw";
+        };
     };
 
     moveLeft (){
-        this.positionX -= 15;
-        this.domElm.style.left = this.positionX + "vw"
-    }
+        if (this.positionX > 0) {
+            this.positionX -= 15;
+            this.domElm.style.left = this.positionX + "vw";
+        };
+    };
 
 }; // end of player class
 
