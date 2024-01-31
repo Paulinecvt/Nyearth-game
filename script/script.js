@@ -172,14 +172,14 @@ function moveTrashes(obstacleSpeed) {
 };
 
 function moveTrashesLevel1() {
-    obstacleSpeed = 200;
+    obstacleSpeed = 190;
     setInterval(() => {
         moveTrashes(obstacleSpeed)
     }, obstacleSpeed);
 };
 
 function moveTrashesLevel2() {
-    obstacleSpeed = 180;
+    obstacleSpeed = 170;
     setTimeout(() => {
     setInterval(() => {
         moveTrashes(obstacleSpeed)
@@ -188,7 +188,7 @@ function moveTrashesLevel2() {
 };
 
 function moveTrashesLevel3() {
-    obstacleSpeed = 160;
+    obstacleSpeed = 150;
     setTimeout(() => {
         setInterval(() => {
             moveTrashes(obstacleSpeed)
@@ -197,8 +197,8 @@ function moveTrashesLevel3() {
 };
 
 function gameplay() {
-    console.log('level1');
-      moveTrashesLevel1();
+        console.log('level1');
+        moveTrashesLevel1();
 setTimeout(() => {
     console.log('level2');
     moveTrashesLevel2();
@@ -206,7 +206,7 @@ setTimeout(() => {
 setTimeout(() => {
     console.log('level3');
     moveTrashesLevel3();
-}, 20000)
+}, 30000)
 };
   
 
@@ -256,7 +256,7 @@ function moveTrashes() {
 
 setInterval(() => {
     createAndDisplayObstacles();
-}, 3000);
+}, 2500);
 
 gameplay();
   
