@@ -1,15 +1,15 @@
 @font-face {
-    src: url('/fonts/Silkscreen-Regular.ttf');
+    src: url('./fonts/Silkscreen-Regular.ttf');
     font-family: silk;
 }
 
 @font-face {
-    src: url('/fonts/Silkscreen-Bold.ttf');
+    src: url('./fonts/Silkscreen-Bold.ttf');
     font-family: silkbold;
 }
 
 @font-face {
-    src: url('/fonts/NanumPenScript-Regular.ttf');
+    src: url('./fonts/NanumPenScript-Regular.ttf');
     font-family: nanum;
 }
 
@@ -22,7 +22,7 @@ body {
 
 
 #board {
-    background-image: url('/img/game-background.png');
+    background-image: url('./img/game-background.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -33,7 +33,7 @@ body {
 
 
 .player {
-    background-image: url('/img/player.png');
+    background-image: url('./img/player.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -76,7 +76,7 @@ body {
 }
 
 #page-gameover {
-    background-image: url('/img/game-background.png');
+    background-image: url('./img/game-background.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -90,7 +90,7 @@ body {
 }
 
 #page-victory {
-    background-image: url('/img/game-background.png');
+    background-image: url('./img/game-background.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
