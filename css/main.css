@@ -139,12 +139,12 @@ body {
     flex-direction: row;
     justify-content: center; 
 }
-#V-donate-btn {
+#vdonate-btn {
     height: 18vh;
     width: 10vw;
 }
 
-#V-restart-button {
+#vrestart-button {
     height: 18vh;
     width: 10vw;
 }
