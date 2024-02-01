@@ -110,7 +110,7 @@ body {
     position: relative;
     width: 400px;
     height: 50px;
-    background-color: black;
+    background-color: #0f3a67;
     border-radius: 30px;
     color: white;
     justify-content: center; 
@@ -127,8 +127,8 @@ body {
     bottom: 8px;
     width: calc(var(--width, 0) * 1%);
     min-width: 5px;
-    max-width: calc(100%-10px);
-    background-color: blue;
+    max-width: 95%;
+    background-color: #1f70a6;
     border-radius: 20px;
     padding: 10px;
 }
@@ -210,6 +210,7 @@ body {
 #victory-title {
     font-family: silkbold;
     font-size:100px;
+    background-clip: border-box;
     background-image: 
     linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet, red); 
     -webkit-background-clip: text;
@@ -238,4 +239,19 @@ body {
     color: #74cbfc;
     font-size: 32px;
     margin-top: 0;
+}
+
+.st-btn {
+    display: flex;
+    text-align: center;
+    font-family: nanum;
+    font-size: 35px;
+}
+
+
+.music-btns {
+    margin-top: 8px;
+    display: flex; 
+    flex-direction: row;
+    justify-content: center; 
 }
