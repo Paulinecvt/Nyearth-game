@@ -210,6 +210,7 @@ body {
 #victory-title {
     font-family: silkbold;
     font-size:100px;
+    background-clip: border-box;
     background-image: 
     linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet, red); 
     -webkit-background-clip: text;

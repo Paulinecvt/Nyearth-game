@@ -181,44 +181,6 @@ function moveTrashesSpeed(obstacleSpeed) {
     }, obstacleSpeed);
 };
 
-/*
-function moveTrashesLevel2() {
-    setTimeout(() => {
-        console.log('level2');
-        obstacleSpeed = 95;
-        setInterval(() => {
-            moveTrashes(obstacleSpeed);
-        }, obstacleSpeed);
-    }, 10000);
-};
-
-function moveTrashesLevel3() {
-    setTimeout(() => {
-        console.log('level3');
-        obstacleSpeed = 90;
-        setInterval(() => {
-            moveTrashes(obstacleSpeed);
-        }, obstacleSpeed);
-    }, 20000);
-}; */
-/*
-function gameplay() {
-    console.log('level1');
-    moveTrashes(100);
-    setTimeout(() => {
-        moveTrashes(100);
-    }, 10000); 
-    setTimeout(() => {
-        moveTrashes(100);
-    }, 20000); 
-};
- */ 
-
-//setInterval(() => {
-//    createAndDisplayObstacles();
-//}, 2300);
-
-
 function gameplay(){
     console.log('level1');
     createAndDisplayObstacles(1);
