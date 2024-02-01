@@ -62,8 +62,10 @@ const obstacleImages = [
     "./img/trash1.png",
     "./img/trash2.png",
     "./img/trash3.png",
-    "./img/trash4.png",
-    "./img/trash5.png"
+    "./img/trash5.png",
+    "./img/trash6.png",
+    "./img/trash7.png",
+    "./img/trash9.png",
  ];
  
  // Function to choose a random image URL
@@ -189,13 +191,13 @@ function gameplay(){
     setTimeout(() => {
         console.log('level2');
         createAndDisplayObstacles(2);
-        moveTrashesSpeed(100);
+        moveTrashesSpeed(110);
     }, 10000);
 
     setTimeout(() => {
         console.log('level3');
         createAndDisplayObstacles(3);
-        moveTrashesSpeed(100);
+        moveTrashesSpeed(110);
     }, 20000)
 };
 

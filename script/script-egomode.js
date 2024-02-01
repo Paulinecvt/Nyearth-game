@@ -63,7 +63,11 @@ const obstacleImages = [
     "./img/trash2.png",
     "./img/trash3.png",
     "./img/trash4.png",
-    "./img/trash5.png"
+    "./img/trash5.png",
+    "./img/trash6.png",
+    "./img/trash7.png",
+    "./img/trash8.png",
+    "./img/trash9.png",
  ];
  
  // Function to choose a random image URL

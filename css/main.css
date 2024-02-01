@@ -47,6 +47,8 @@ body {
     margin-top: 0vh;
     padding-top: 0vh;
     text-align: center;
+    margin-right: 2vw;
+    margin-left: 2vw;
 }
 
 #title1 {
@@ -161,10 +163,7 @@ body {
     overflow: hidden;
 }
 
-#restart-button {
-    height: 18vh;
-    width: 10vw;
-}
+
 
 #fail, #try-again {
     text-align: center; 
@@ -175,12 +174,23 @@ body {
     width: 15vw;
 }
 
+.gameover-div{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom:0;
+    padding-top: 0;
+}
+
+#restart-button {
+    margin-top: 0;
+}
+
 #fail {
     font-family: nanum;
     color: #74cbfc;
     font-size: 40px;
     margin-bottom: 0;
-    
+    padding-bottom: 0;
 }
 
 #try-again {
@@ -197,15 +207,7 @@ body {
     flex-direction: row;
     justify-content: center; 
 }
-#vdonate-btn {
-    height: 18vh;
-    width: 10vw;
-}
 
-#vrestart-button {
-    height: 18vh;
-    width: 10vw;
-}
 
 #victory-title {
     font-family: silkbold;
@@ -223,7 +225,6 @@ body {
           background-position: 4500vh;
       }
   }
-
 
 #win {
     font-family: nanum;
