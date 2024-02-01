@@ -1,3 +1,26 @@
+document.addEventListener('DOMContentLoaded', () => {
+
+
+//DOM ELM
+// Move the player 
+document.addEventListener("keydown", (e) => {
+    if (e.code === 'ArrowUp') {
+        player.moveUp();
+    } else if (e.code === 'ArrowDown') {
+        player.moveDown(); 
+    } else if (e.code === 'ArrowLeft'){
+        player.moveLeft();
+    } else if (e.code === 'ArrowRight'){
+        player.moveRight();
+
+    }
+
+});
+
+
+
+
+
 // PLAYER CLASS
 class Player {
     constructor (){
@@ -116,12 +139,13 @@ class Trashes {
  }; //end of trash class
        
 
+// INITIALIZING
+ const player = new Player ();
+ let obstacles = [];
 
-
-// CONST
-const player = new Player ();
-// CONST
-let obstacles = [];
+ function startGame() {
+    window.location.href = "gameplay.html";
+}
 
 
 
@@ -171,15 +195,15 @@ function moveTrashes(obstacleSpeed) {
     });
 };
 
-
-function moveTrashesLevel1() {
+// EASY MODE
+function moveTrashesLevel1e() {
     obstacleSpeed = 100;
     setInterval(() => {
         moveTrashes(obstacleSpeed);
     }, obstacleSpeed);
 };
 
-function moveTrashesLevel2() {
+function moveTrashesLevel2e() {
     setTimeout(() => {
         console.log('level2');
         obstacleSpeed = 80;
@@ -189,7 +213,7 @@ function moveTrashesLevel2() {
     }, 10000);
 };
 
-function moveTrashesLevel3() {
+function moveTrashesLevel3e() {
     setTimeout(() => {
         console.log('level3');
         obstacleSpeed = 60;
@@ -199,50 +223,55 @@ function moveTrashesLevel3() {
     }, 20000);
 };
 
-function gameplay() {
+function gameplayEasy() {
     console.log('level1');
-    moveTrashesLevel1();
+    moveTrashesLevel1e();
     setTimeout(() => {
-        moveTrashesLevel2();
+        moveTrashesLevel2e();
     }, 10000); 
     setTimeout(() => {
-        moveTrashesLevel3();
+        moveTrashesLevel3e();
     }, 20000); 
 };
   
+// HARD MODE
+function moveTrashesLevel1h() {
+    obstacleSpeed = 70;
+    setInterval(() => {
+        moveTrashes(obstacleSpeed);
+    }, obstacleSpeed);
+};
 
-setInterval(() => {
-    createAndDisplayObstacles();
-}, 2300);
+function moveTrashesLevel2h() {
+    setTimeout(() => {
+        console.log('level2');
+        obstacleSpeed = 55;
+        setInterval(() => {
+            moveTrashes(obstacleSpeed);
+        }, obstacleSpeed);
+    }, 10000);
+};
 
-gameplay();
-  
-setTimeout(()=> {
-    console.log("Victory");
-    location.href = "victory.html"
-}, 54000);
+function moveTrashesLevel3h() {
+    setTimeout(() => {
+        console.log('level3');
+        obstacleSpeed = 47;
+        setInterval(() => {
+            moveTrashes(obstacleSpeed);
+        }, obstacleSpeed);
+    }, 20000);
+};
 
-
-
-
-// EVENTS
-// Move the player
-
-    
-    document.addEventListener("keydown", (e) => {
-    if (e.code === 'ArrowUp') {
-        player.moveUp();
-    } else if (e.code === 'ArrowDown') {
-        player.moveDown(); 
-    } else if (e.code === 'ArrowLeft'){
-        player.moveLeft();
-    } else if (e.code === 'ArrowRight'){
-        player.moveRight();
-
-    }
-
-});
-
+function gameplayHard() {
+    console.log('level1');
+    moveTrashesLevel1h(); // = level2 of easymode
+    setTimeout(() => {
+        moveTrashesLevel2h();
+    }, 10000); // = level3 of easymode
+    setTimeout(() => {
+        moveTrashesLevel3h();
+    }, 20000); // hard level
+};
 
 // position X > width > vw
 // position Y > height > vh
@@ -254,4 +283,46 @@ setInterval(() => {
     const computedStyle = getComputedStyle(progressBar);
     const width = parseFloat(computedStyle.getPropertyValue('--width')) 
     progressBar.style.setProperty('--width', width +.01);
-}, 5)
+}, 5);
+
+
+
+    
+
+
+// USEFUL CONST
+const easyBtn = document.getElementById("easy-btn");
+const hardBtn = document.getElementById("hard-btn");
+// Start easy mode 
+easyBtn.addEventListener('click', () => {
+    startGame();
+
+    setInterval(() => {
+        createAndDisplayObstacles();
+    }, 2300);
+    
+    gameplayEasy();
+      
+    setTimeout(()=> {
+        console.log("Victory");
+        location.href = "victory.html"
+    }, 54000);
+});
+
+// Start hard mode
+hardBtn.addEventListener('click', () => {
+    startGame();
+
+    setInterval(() => {
+        createAndDisplayObstacles();
+    }, 1800);
+    
+    gameplayHard();
+      
+    setTimeout(()=> {
+        console.log("Victory");
+        location.href = "victory.html"
+    }, 54000);
+});
+
+});
