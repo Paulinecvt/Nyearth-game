@@ -8,14 +8,43 @@
 </head>
 <body>
     <div id="board">
+        <audio id="soundtrack" src="./music/soundtrack.mp3"></audio>
+        <div>
+            <a href="javascript:void(0)" onclick="changeState(0)" class="st-btn">Play</a>
+            <a href="javascript:void(0)" onclick="changeState(1)" class="st-btn">Pause</a>
+            <a href="javascript:void(0)" onclick="changeState(2)" class="st-btn active">Stop</a>
+        </div>
+        
         <div class="progressbar" style="--width: 0" data-label="Surviving..."></div>
     </div>
 
+    
     
 </body>
 
 
 
+
+<script>
+    function changeState (x){
+    let stBtns = document.querySelectorAll(".st-btn");
+    let soundtrack = document.querySelector("#soundtrack");
+    
+    for (let i=0; i<stBtns.length; i++){
+        stBtns[i].classList.remove("active");
+    }
+    stBtns[x].classList.add("active");
+
+    if (x===0){
+        soundtrack.play();
+    } else if (x===1){
+        soundtrack.pause();
+    } else if (x===2){
+        soundtrack.pause();
+        soundtrack.currentTime=0;
+    }
+};
+</script>
 <script src="./script/script.js"></script>
 </html>
 

@@ -253,3 +253,5 @@ setInterval(() => {
     const width = parseFloat(computedStyle.getPropertyValue('--width')) 
     progressBar.style.setProperty('--width', width +.01);
 }, 5)
+
+//sound

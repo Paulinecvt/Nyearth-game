@@ -239,3 +239,15 @@ body {
     font-size: 32px;
     margin-top: 0;
 }
+
+.st-btn {
+    display: block;
+    text-align: center;
+    font-family: nanum;
+    color: #74cbfc;
+    font-size: 25px;
+}
+
+.st-btn.active {
+    color: black;
+}
