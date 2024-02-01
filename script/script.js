@@ -128,12 +128,16 @@ let obstacles = [];
 
 let obstacleSpeed = 0; // starting speed
 
-function createAndDisplayObstacles() {
+function createAndDisplayObstacles(level) {
+    const intervalTime = 3000 - (level * 225);
+
+    const intervalId = setInterval (() => { 
     const newObstacle = new Trashes();
     obstacles.push(newObstacle);
     console.log('Trash is created from the position ' + newObstacle.positionY);
     //newObstacle.createDomElm();
     return newObstacle.positionY;
+}, intervalTime);
 };
 
 function moveTrashes(obstacleSpeed) {
@@ -171,17 +175,17 @@ function moveTrashes(obstacleSpeed) {
     });
 };
 
-function moveTrashesLevel1() {
-    obstacleSpeed = 100;
+function moveTrashesSpeed(obstacleSpeed) {
     setInterval(() => {
         moveTrashes(obstacleSpeed);
     }, obstacleSpeed);
 };
 
+/*
 function moveTrashesLevel2() {
     setTimeout(() => {
         console.log('level2');
-        obstacleSpeed = 80;
+        obstacleSpeed = 95;
         setInterval(() => {
             moveTrashes(obstacleSpeed);
         }, obstacleSpeed);
@@ -191,31 +195,50 @@ function moveTrashesLevel2() {
 function moveTrashesLevel3() {
     setTimeout(() => {
         console.log('level3');
-        obstacleSpeed = 60;
+        obstacleSpeed = 90;
         setInterval(() => {
             moveTrashes(obstacleSpeed);
         }, obstacleSpeed);
     }, 20000);
-};
-
+}; */
+/*
 function gameplay() {
     console.log('level1');
-    moveTrashesLevel1();
+    moveTrashes(100);
     setTimeout(() => {
-        moveTrashesLevel2();
+        moveTrashes(100);
     }, 10000); 
     setTimeout(() => {
-        moveTrashesLevel3();
+        moveTrashes(100);
     }, 20000); 
 };
-  
+ */ 
 
-setInterval(() => {
-    createAndDisplayObstacles();
-}, 2300);
+//setInterval(() => {
+//    createAndDisplayObstacles();
+//}, 2300);
+
+
+function gameplay(){
+    console.log('level1');
+    createAndDisplayObstacles(1);
+    moveTrashesSpeed(100)
+
+    setTimeout(() => {
+        console.log('level2');
+        createAndDisplayObstacles(2);
+        moveTrashesSpeed(100);
+    }, 10000);
+
+    setTimeout(() => {
+        console.log('level3');
+        createAndDisplayObstacles(3);
+        moveTrashesSpeed(100);
+    }, 20000)
+};
 
 gameplay();
-  
+
 setTimeout(()=> {
     console.log("Victory");
     location.href = "victory.html"
@@ -254,4 +277,4 @@ setInterval(() => {
     progressBar.style.setProperty('--width', width +.01);
 }, 5)
 
-//sound
+

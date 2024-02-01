@@ -9,10 +9,10 @@
 <body>
     <div id="board">
         <audio id="soundtrack" src="./music/soundtrack.mp3"></audio>
-        <div>
-            <a href="javascript:void(0)" onclick="changeState(0)" class="st-btn">Play</a>
-            <a href="javascript:void(0)" onclick="changeState(1)" class="st-btn">Pause</a>
-            <a href="javascript:void(0)" onclick="changeState(2)" class="st-btn active">Stop</a>
+        <div class="music-btns">
+            <a href="javascript:void(0)" onclick="changeState(0)" class="st-btn">▶️</a>
+            <a href="javascript:void(0)" onclick="changeState(1)" class="st-btn">⏸️</a>
+            <a href="javascript:void(0)" onclick="changeState(2)" class="st-btn active">⏹️</a>
         </div>
         <div class="progressbar" style="--width: 0" data-label="Surviving..."></div>
     </div>
@@ -25,7 +25,7 @@
     function changeState (x){
     let stBtns = document.querySelectorAll(".st-btn");
     let soundtrack = document.querySelector("#soundtrack");
-    
+
     for (let i=0; i<stBtns.length; i++){
         stBtns[i].classList.remove("active");
     }
@@ -40,6 +40,7 @@
         soundtrack.currentTime=0;
     }
 };
+</script>
 </script>
 <script src="./script/script2.js"></script>
 </html>

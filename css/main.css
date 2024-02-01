@@ -110,7 +110,7 @@ body {
     position: relative;
     width: 400px;
     height: 50px;
-    background-color: black;
+    background-color: #0f3a67;
     border-radius: 30px;
     color: white;
     justify-content: center; 
@@ -127,8 +127,8 @@ body {
     bottom: 8px;
     width: calc(var(--width, 0) * 1%);
     min-width: 5px;
-    max-width: calc(100%-10px);
-    background-color: blue;
+    max-width: 95%;
+    background-color: #1f70a6;
     border-radius: 20px;
     padding: 10px;
 }
@@ -241,13 +241,16 @@ body {
 }
 
 .st-btn {
-    display: block;
+    display: flex;
     text-align: center;
     font-family: nanum;
-    color: #74cbfc;
-    font-size: 25px;
+    font-size: 35px;
 }
 
-.st-btn.active {
-    color: black;
+
+.music-btns {
+    margin-top: 8px;
+    display: flex; 
+    flex-direction: row;
+    justify-content: center; 
 }
