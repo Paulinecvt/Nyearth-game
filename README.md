@@ -1,7 +1,5 @@
-# H1 
-Nyearth
-### H3
-by Pauline Cvt
+# Nyearth
+### by Pauline Cvt
 
 ** The brief **
 As a student of Iron Hack learning Web Development, my first project is a browser game where obstacles are displayed and a collision with the player triggers a Game Over.
@@ -34,8 +32,7 @@ Colors, galaxy and ecology are the main center of Nyearth, a game where you need
 - My boyfriend aka beta-tester as I'm not skilled enough to pass the Ego Mode by myself
 - @FamilyJules on Youtube for the music
 
-### H3
-This mini-game is not meant to be commercialized. 
+### This mini-game is not meant to be commercialized. 
 
 
 
