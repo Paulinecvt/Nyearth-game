@@ -34,6 +34,12 @@ _The code and background were created by me, with my teachers' advices_
 - My boyfriend aka beta-tester as I'm not skilled enough to pass the Ego Mode by myself
 - @FamilyJules on Youtube
 
+**Presentation**
+https://www.canva.com/design/DAF7icI5gTo/Pi_Cn20LgBxxKN5fMnQU8A/view?utm_content=DAF7icI5gTo&utm_campaign=designshare&utm_medium=link&utm_source=editor
+
+**About the creator**
+My name's Pauline Cvt, I'm 28 old, UX/UI Designer, sociology student in my 3rd year and a future Web Developer FullStack. You can find a glimpse of my work in my portfolio linked on my profile. I'm available for a remote job for April 2024 in France, Europe and North-America. English and French speaker. 
+
 ### This mini-game is not meant to be commercialized. 
 
 
