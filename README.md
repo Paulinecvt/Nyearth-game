@@ -2,6 +2,7 @@
 ### by Pauline Cvt
 
 **Play**
+
 https://paulinecvt.github.io/Nyearth-game/
 
 **The brief**
@@ -25,8 +26,9 @@ Colors, galaxy and ecology are the main center of **Nyearth**, a game where you 
 
 **Contents**
 - _Music_ : https://www.youtube.com/watch?v=KR1LmjNT8FM
-- _Images_, icons, buttons : Canva Premium Content + some modifications 
+- _Images, icons, buttons_ : Canva Premium Content + some modifications 
 - _Fonts_ : Silk for titles, Nanum Brush Script for content
+  
 _The code and background were created by me, with my teachers' advices_
 
 **Inspo**
