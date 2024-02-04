@@ -1,6 +1,9 @@
 # Nyearth
 ### by Pauline Cvt
 
+**Play**
+https://paulinecvt.github.io/Nyearth-game/
+
 **The brief**
 
 As a student of Iron Hack learning Web Development, my first project is a browser game where obstacles are displayed and a collision with the player triggers a Game Over.
